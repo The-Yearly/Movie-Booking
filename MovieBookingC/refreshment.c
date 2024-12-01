@@ -1,16 +1,27 @@
 #include <stdio.h>
+#include <string.h>
 
 void beverage() {
     int sop = 0;
     int i;
     char ch;
-    char *items[20];
+    char items[20][50];
     int prices[] = {170, 250, 280, 270, 290, 40, 180, 180, 300, 320, 310, 280, 310, 230};
-    char *food[] = {
-        "COCO COLA", "FRENCH FRIES(NORMAL)", "FRENCH FRIES(CHEESE OVERLOAD)", "POPCORN(NORMAL)", 
-        "POPCORN(CHOCOLATE MASHUP)", "MINERAL WATER", "CAPPUCCINO", "CAFE LATTE 250 ML", 
-        "CHICKEN NUGGETS", "CHICKEN TIKKA PIZZA 25 CM", "CHICKEN TIKKA ROLL", "NACHOS LARGE 130GM", 
-        "PERI PERI CHICKEN BURGER", "CHICKEN SESAME DUMSUMS 5 PCS"
+    char food[14][50] = {
+        "COCO COLA", 
+        "FRENCH FRIES(NORMAL)", 
+        "FRENCH FRIES(CHEESE OVERLOAD)", 
+        "POPCORN(NORMAL)", 
+        "POPCORN(CHOCOLATE MASHUP)", 
+        "MINERAL WATER", 
+        "CAPPUCCINO", 
+        "CAFE LATTE 250 ML", 
+        "CHICKEN NUGGETS", 
+        "CHICKEN TIKKA PIZZA 25 CM", 
+        "CHICKEN TIKKA ROLL", 
+        "NACHOS LARGE 130GM", 
+        "PERI PERI CHICKEN BURGER", 
+        "CHICKEN SESAME DUMSUMS 5 PCS"
     };
     
     int count = 0;
@@ -35,12 +46,11 @@ void beverage() {
         scanf("%d", &i);
         
         sop += prices[i - 1];
-        items[count] = food[i - 1];
+        strcpy(items[count], food[i - 1]);
         count++;
         
         printf("Do you want to continue? (y/n): ");
-        getchar();
-        scanf("%c", &ch);
+        scanf(" %c", &ch);
         
         if (ch == 'n') {
             break;
