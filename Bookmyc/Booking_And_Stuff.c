@@ -35,6 +35,7 @@ int main(){
         if(m==4){
             break;
         }
+        beverage();
         return 0;
     }
     beverage();
