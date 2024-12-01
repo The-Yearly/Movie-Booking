@@ -1,7 +1,4 @@
 import mysql.connector as m
-nf=open("pas.txt","r")
-npas=nf.read()
-nf.close()
 sql=m.connect(user="root",host="localhost",password="Arduino1")
 c=sql.cursor()
 c.execute("use pvr")   

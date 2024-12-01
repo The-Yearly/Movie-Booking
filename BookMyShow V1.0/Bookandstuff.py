@@ -1,7 +1,5 @@
 import mysql.connector as m
-nf=open("pas.txt","r")
-npas=nf.read()
-nf.close()
+
 sq=m.connect(host="localhost", user="root", passwd="Arduino1")
 c=sq.cursor()
 c.execute("use pvr")
@@ -14,6 +12,7 @@ def seatingplan(s,mov,slot):
                 c.execute(s)
                 ll=c.fetchall()
                 seats=list(ll[0][0])
+                print(seats)
                 r1=seats[0:10]
                 r2=seats[10:20]
                 r3=seats[20:30]

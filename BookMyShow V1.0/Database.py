@@ -1,7 +1,4 @@
 import mysql.connector as m
-nf=open("pas.txt","r")
-npas=nf.read()
-nf.close()
 con=m.connect(host="localhost", user="root", passwd="Arduino1")
 c=con.cursor()  
 def connect():
