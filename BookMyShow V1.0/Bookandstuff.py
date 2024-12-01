@@ -56,12 +56,22 @@ def seatingplan(s,mov,slot):
                                 print("Do You Want To Buy These Tickets For ",sop,"Y/N")
                                 con=input(" : ")
                                 if con=="Y":
-                                        for g in urseats:
-                                                seats[g]="1"
-                                        for t in seats:        
-                                                stse+=t
-                                        c.execute("update {} set seats='{}' where movie='{}'".format(slot,stse,mov))
-                                        sq.commit()
+                                    while True:
+                                        print("Select A Payment Method")
+                                        print("1:Pay At Theater")
+                                        print("2:Online Transaction")
+                                        choice=int(input(": "))
+                                        if choice==1:
+                                            for g in urseats:
+                                                    seats[g]="1"
+                                            for t in seats:        
+                                                    stse+=t
+                                            c.execute("update {} set seats='{}' where movie='{}'".format(slot,stse,mov))
+                                            sq.commit()
+                                            break
+                                        else:
+                                            print("Our Services Are Currently Down Pls Select Other Methods")
+                                    break        
                         else:
                                 print("\nYou Have Not Selected Any Seats Pls Select A Seat First")
                 elif x==3:
