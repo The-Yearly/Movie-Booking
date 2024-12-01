@@ -106,7 +106,3 @@ void beverage() {
     printf("Total sum: %d\n", sop);
 }
 
-int main() {
-    beverage();
-    return 0;
-}
